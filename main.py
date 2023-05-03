@@ -53,20 +53,16 @@ print(f"The force exerted by Earth is {earth_force} N")   #  The force = m x g =
 
 # 3.
 def pull(m1, m2, d):
-    G = 6.674 * 10 ** -11
-    return G * ((m1 * m2) / d ** 2)
-# Calculate the gravitational pull between Earth and the Moon
+    G = 6.674 * 10 ** -11    #G is the gravitational constant, approximately 6.674×10power of-11 N m2/kg2
+    return G * ((m1 * m2) / d ** 2)        #Newton worked out a formula for the force of attraction:  f= (G(m1 X m2)) / dpower2
+                             # Calculate the gravitational pull between Earth and the Moon
 earth_mass = 5.97 * 10 ** 24  # kg    # The Earth has a mass of 5.972×10 power24 kg: m1
-moon_mass = 7.34 * 10 ** 22  # kg    # Moon has a mass of 7.342×10 power22 kg) : m2
+moon_mass = 7.34 * 10 ** 22  # kg    # Moon has a mass of 7.342×10power22 kg) : m2
 distance = 384400000  # m distance in meters
 pull_force = pull(earth_mass, moon_mass, distance)
 print(pull_force)  # = 1.985428700763691e+20 
 
 
-# But a much larger object such as the Moon (with a mass of 7.342×1022 kg) does have a noticeable effect on the Earth.
-
+# But a much larger object such as the Moon (with a mass of 7.342×10 power22 kg) does have a noticeable effect on the Earth.
 # The Moon orbits the Earth at about 384,000 km every 27.3 days
-
-# And the Earth also has an "orbit" (more like a wobble) with the Moon of about 5000 km (which is actually less than the Earth's radius), also every 27.3 days.
-
 # Your turn: try to work out the force of attraction == pull_force, between the Earth and the Moon.
