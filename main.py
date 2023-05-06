@@ -12,19 +12,7 @@ print (greet)
 
 # ##2.Force
 def force(mass: float, body: str = 'earth') -> float:
-    planet_mass = {
-        'mercury': 0.330,
-        'venus': 4.87,
-        'earth': 5.97,
-        'moon': 0.073,
-        'mars': 0.642,
-        'jupiter': 1898,
-        'saturn': 568,
-        'uranus': 86.8,
-        'neptune': 102,
-        'pluto': 0.0130
-    }
-    
+
     planet_gravity = {
         'mercury': 3.7,
         'venus': 8.9,
@@ -37,27 +25,22 @@ def force(mass: float, body: str = 'earth') -> float:
         'neptune': 11.0,
         'pluto': 0.7
     }
-    
-    if body not in planet_mass:   # to check body in dict
-        print( ValueError(f' body not found: {body}'))
-    else:
-        gravity = planet_gravity[body]
-        mass = planet_mass[body]
-    
+  
+    gravity = planet_gravity[body]
     return mass * gravity
  
-earth_force =force(mass='earth')    # while calling function #  argument earth's gravity  is by default  
-print(f"The force exerted by Earth is {earth_force} N")   #  The force = m x g = 5.97 x 9.8 =  58.506 N 
+earth_force =force(mass=10.0)    # while calling function #  argument earth's gravity  is by default  
+print(f"The force exerted by Earth is {earth_force} N")   #  The force = m x g = 10.0 x 9.8 =  98.0 N 
 
 # # #    
 
 # 3.
 def pull(m1, m2, d):
-    G = 6.674 * 10 ** -11    #G is the gravitational constant, approximately 6.674×10power of-11 N m2/kg2
-    return G * ((m1 * m2) / d ** 2)        #Newton worked out a formula for the force of attraction:  f= (G(m1 X m2)) / dpower2
+    G = 6.674 * (10 ** -11)    #G is the gravitational constant, approximately 6.674×10power of-11 N m2/kg2
+    return G * ((m1 * m2) / (d ** 2))        #Newton worked out a formula for the force of attraction:  f= (G(m1 X m2)) / dpower2
                              # Calculate the gravitational pull between Earth and the Moon
-earth_mass = 5.97 * 10 ** 24  # kg    # The Earth has a mass of 5.972×10 power24 kg: m1
-moon_mass = 7.34 * 10 ** 22  # kg    # Moon has a mass of 7.342×10power22 kg) : m2
+earth_mass = 5.97 * (10 ** 24)  # kg    # The Earth has a mass of 5.972×10 power24 kg: m1
+moon_mass = 7.34 * (10 ** 22)  # kg    # Moon has a mass of 7.342×10power22 kg) : m2
 distance = 384400000  # m distance in meters
 pull_force = pull(earth_mass, moon_mass, distance)
 print(pull_force)  # = 1.985428700763691e+20 
